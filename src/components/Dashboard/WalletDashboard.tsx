@@ -21,8 +21,23 @@ const WalletDashboard: React.FC = () => {
 
   const recentTxs = transactions.slice(0, 5);
 
+  const handleLogout = () => {
+    // Clear authentication token or flag (adjust based on your auth logic)
+    localStorage.removeItem("isAuthenticated");
+    // Redirect to login page
+    navigate("/");
+  };
+
   return (
-    <div className="max-w-2xl mx-auto px-4 py-8">
+    <div className="max-w-2xl mx-auto px-4 py-8 relative">
+      {/* Logout Button */}
+      <button
+        onClick={handleLogout}
+        className="absolute top-4 right-4 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition"
+      >
+        Logout
+      </button>
+
       {/* Dashboard Header */}
       <div className="mb-8 text-center">
         <h1 className="text-3xl font-extrabold text-blue-700 leading-tight mb-2">
