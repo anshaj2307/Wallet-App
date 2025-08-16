@@ -20,7 +20,7 @@ const Login: React.FC = () => {
 
   const handleVerifyOTP = () => {
     if (otp !== "1234") {
-      toast.error("Invalid OTP. Please try again.");
+      toast.error("Invalid OTP. Please try 1234.");
       return;
     }
 
